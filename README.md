@@ -15,7 +15,7 @@ Create a personalized book website! Instead of adding all of the details of book
     ];
 ```
   
-* Create an h1 element which has the text _Book List_. Change the font style of _one_ of the words in the heading. 
+* Create an h1 element which has the text _Book List_.
 * Iterate through the array of books. For each book, create a p element with the book title and author and append it to the page.
 * Use a ul and li to display the books. Again, add these elements using JavaScript.
 * Add an img to each book that links to a URL of the book cover.
