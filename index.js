@@ -16,6 +16,7 @@ const books = [{
     img: "https://images-na.ssl-images-amazon.com/images/I/518%2BxIiELFL._SX258_BO1,204,203,200_.jpg"
 }];
 
+//change style of heading
 let title = document.querySelector("h1");
 title.style.textTransform = "uppercase";
 
