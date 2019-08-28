@@ -14,6 +14,12 @@ const books = [{
     author: 'Ellen Lupton',
     alreadyRead: true,
     img: "https://images-na.ssl-images-amazon.com/images/I/518%2BxIiELFL._SX258_BO1,204,203,200_.jpg"
+},
+{
+    title: 'Eloquent JavaScript',
+    author: 'Marijn Haverbeke',
+    alreadyRead: false,
+    img: "https://eloquentjavascript.net/img/cover.jpg"
 }];
 
 //change style of heading
@@ -39,17 +45,25 @@ books.sort((a, b) => {
     } return 0;
 } )
 
+let unorderedList = document.querySelector(".unordered-list");
+
 books.forEach(element => {
     //adding book element on the page
-    let unorderedList = document.querySelector(".unordered-list");
     let li = document.createElement("li");
     li.innerHTML = `<p>${element.title}, ${reverseName(element.author)}</p>
     <a href="${element.img}"> <img class="image" src="${element.img}"> </a>`;
     unorderedList.append(li);
-
+    li.style.width = "12rem";
     //checking if the book is already read
     if (element.alreadyRead) {
+        let read = document.createElement("p");
+        read.innerHTML = `<p class="status">Status: Already read</p>`;
+        li.append(read);
         li.classList.add("already-read");
+    } else {
+        let notRead = document.createElement("p");
+        notRead.innerHTML = `<p class="status">Status: Still need to read...</p>`
+        li.append(notRead);
     }
 });
 
@@ -60,3 +74,15 @@ for (let i = 0; i < images.length; i++) {
     images[i].style.height = "10rem";
     images[i].style.border = ".2rem solid black";
 }
+
+//additional styling 
+let heading = document.querySelector("h1");
+heading.style.textAlign = "center";
+unorderedList.style.display = "flex";
+unorderedList.style.flexFlow = "row wrap"
+unorderedList.style.justifyContent = "space-around";
+let status = document.querySelectorAll(".status");
+status.forEach(bookStatus => {
+    bookStatus.style.fontStyle = "italic";
+
+})
