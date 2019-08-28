@@ -14,13 +14,18 @@ Create a personalized book website! Instead of adding all of the details of book
       }
     ];
 ```
-  
-* Change the text of the h1 to uppercase.
+**Instructions**:
+* Change the text of the h1 to uppercase and center it on the page.
 * Iterate through the array of books. For each book, create a p element with the book title and author and append it to the page.
-* Use a ul and li to display the books. Again, add these elements using JavaScript.
+* Use a ul, `unordered-list`, and li to display the books. Again, add li elements using JavaScript.
 * Add an img to each book that links to a URL of the book cover.
 * Change the height and width of the images on the page to appear the same size. Add a border around the images.
 * Change the style of the book depending on whether it has been read or not.
-* Change the order of the author's name so that last name appears first. 
+* Change the order of the author's name so that **last name appears first**. 
 * Sort the books on the page depending on alphabetical order of the author's last name.
+* Make the page responsive using JavaScript.
+
+**Notes**: 
+* Add additional styling to the page.
+* Deadline: 2hrs.
 
