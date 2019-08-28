@@ -8,7 +8,7 @@ const books = [{
     author: 'Brian Christian',
     alreadyRead: true,
     img: "http://t2.gstatic.com/images?q=tbn:ANd9GcRqNE0qeS4ldVIC9DbGkx9MOwJ4WWKi6HVvtrtZ8XTKVodonSBy"
-}, 
+},
 {
     title: 'Thinking with Type',
     author: 'Ellen Lupton',
@@ -43,10 +43,9 @@ books.sort((a, b) => {
     } else if (surnameA > surnameB) {
         return 1;
     } return 0;
-} )
+})
 
 let unorderedList = document.querySelector(".unordered-list");
-
 books.forEach(element => {
     //adding book element on the page
     let li = document.createElement("li");
@@ -60,6 +59,11 @@ books.forEach(element => {
         read.innerHTML = `<p class="status">Status: Already read</p>`;
         li.append(read);
         li.classList.add("already-read");
+        let alreadyRead = document.querySelectorAll(".already-read");
+        for (let i = 0; i < alreadyRead.length; i++) {
+            alreadyRead[i].style.color = "blue";
+        }
+
     } else {
         let notRead = document.createElement("p");
         notRead.innerHTML = `<p class="status">Status: Still need to read...</p>`
