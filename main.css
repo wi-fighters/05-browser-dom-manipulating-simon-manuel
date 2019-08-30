@@ -1,0 +1,19 @@
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.unordered-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.status {
+  font-style: italic;
+}
+
+.image {
+  height: 10rem;
+  border: 0.2rem solid black;
+}
