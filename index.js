@@ -36,16 +36,13 @@ function reverseName(name) {
   return reversedName;
 }
 
-//sort object based on surname
+// Sort object based on surname, use String.prototype.localeCompare for managing case and special accents
+// See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
 books.sort((a, b) => {
-  let surnameA = reverseName(a.author);
-  let surnameB = reverseName(b.author);
-  if (surnameA < surnameB) {
-    return -1;
-  } else if (surnameA > surnameB) {
-    return 1;
-  }
-  return 0;
+  const surnameA = reverseName(a.author);
+  const surnameB = reverseName(b.author);
+
+  return surnameA.localeCompare(surnameB);
 });
 
 const bookList = document.querySelector(".book-list");
