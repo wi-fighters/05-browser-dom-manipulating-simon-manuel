@@ -49,28 +49,41 @@ books.sort((a, b) => {
 });
 
 let bookList = document.querySelector(".book-list");
-books.forEach(element => {
-  //adding book element on the page
-  let li = document.createElement("li");
-  li.classList.add("book");
-  li.innerHTML = `<p>${element.title}, ${reverseName(element.author)}</p>
-    <a href="${element.img}"> <img class="book-cover" src="${
-    element.img
-  }"> </a>`;
-  bookList.append(li);
-  //checking if the book is already read
-  if (element.alreadyRead) {
-    let read = document.createElement("p");
-    read.innerHTML = `<p class="status">Status: Already read</p>`;
-    li.append(read);
-    li.classList.add("already-read");
-    let alreadyRead = document.querySelectorAll(".already-read");
-    for (let i = 0; i < alreadyRead.length; i++) {
-      alreadyRead[i].style.color = "blue";
-    }
-  } else {
-    let notRead = document.createElement("p");
-    notRead.innerHTML = `<p class="status">Status: Still need to read...</p>`;
-    li.append(notRead);
+books.forEach(book => {
+  // Create list item to contain book info
+  const bookListItem = document.createElement("li");
+  bookListItem.classList.add("book");
+
+  // Create paragraph to contain book title
+  const bookTitleParagraph = document.createElement("p");
+  bookTitleParagraph.classList.add("book-title");
+  bookTitleParagraph.innerText = book.title + ", ";
+
+  // Create span to contain book author
+  const bookAuthorSpan = document.createElement("span");
+  bookAuthorSpan.classList.add("book-author");
+  bookAuthorSpan.innerText = reverseName(book.author);
+
+  // Create img to contain book cover
+  const bookCoverImg = document.createElement("img");
+  bookCoverImg.classList.add("book-cover");
+  bookCoverImg.src = book.img;
+
+  // Create paragraph to contain status
+  const readStatusParagraph = document.createElement("p");
+  readStatusParagraph.classList.add("status");
+  readStatusParagraph.innerText = "Status: Still need to read...";
+
+  // Change status paragraph if read
+  if (book.alreadyRead) {
+    readStatusParagraph.classList.add("already-read");
+    readStatusParagraph.innerText = "Status: Already read";
   }
+
+  // Compose elements
+  bookTitleParagraph.appendChild(bookAuthorSpan);
+  bookListItem.appendChild(bookTitleParagraph);
+  bookListItem.appendChild(bookCoverImg);
+  bookListItem.appendChild(readStatusParagraph);
+  bookList.appendChild(bookListItem);
 });
