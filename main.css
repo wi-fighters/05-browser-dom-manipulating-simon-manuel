@@ -3,17 +3,21 @@ h1 {
   text-align: center;
 }
 
-.unordered-list {
+.book-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+}
+
+.book {
+  width: 12rem;
 }
 
 .status {
   font-style: italic;
 }
 
-.image {
+.book-cover {
   height: 10rem;
   border: 0.2rem solid black;
 }

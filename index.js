@@ -48,14 +48,16 @@ books.sort((a, b) => {
   return 0;
 });
 
-let unorderedList = document.querySelector(".unordered-list");
+let bookList = document.querySelector(".book-list");
 books.forEach(element => {
   //adding book element on the page
   let li = document.createElement("li");
+  li.classList.add("book");
   li.innerHTML = `<p>${element.title}, ${reverseName(element.author)}</p>
-    <a href="${element.img}"> <img class="image" src="${element.img}"> </a>`;
-  unorderedList.append(li);
-  li.style.width = "12rem";
+    <a href="${element.img}"> <img class="book-cover" src="${
+    element.img
+  }"> </a>`;
+  bookList.append(li);
   //checking if the book is already read
   if (element.alreadyRead) {
     let read = document.createElement("p");
