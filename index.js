@@ -48,7 +48,7 @@ books.sort((a, b) => {
   return 0;
 });
 
-let bookList = document.querySelector(".book-list");
+const bookList = document.querySelector(".book-list");
 books.forEach(book => {
   // Create list item to contain book info
   const bookListItem = document.createElement("li");
