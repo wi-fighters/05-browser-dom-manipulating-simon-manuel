@@ -32,7 +32,7 @@ const books = [
 function reverseName(name) {
   let authorName = name.split(" ");
   authorName.reverse();
-  let reversedName = authorName.join(" ");
+  let reversedName = authorName.join(", ");
   return reversedName;
 }
 
@@ -49,38 +49,58 @@ const bookList = document.querySelector(".book-list");
 books.forEach(book => {
   // Create list item to contain book info
   const bookListItem = document.createElement("li");
-  bookListItem.classList.add("book");
+  bookListItem.classList.add("book", "card", "mb-3");
 
-  // Create paragraph to contain book title
-  const bookTitleParagraph = document.createElement("p");
-  bookTitleParagraph.classList.add("book-title");
-  bookTitleParagraph.innerText = book.title + ", ";
+  // Create a section to contain the card body
+  const bookCardSection = document.createElement("section");
+  bookCardSection.classList.add("card-body");
 
-  // Create span to contain book author
-  const bookAuthorSpan = document.createElement("span");
-  bookAuthorSpan.classList.add("book-author");
-  bookAuthorSpan.innerText = reverseName(book.author);
+  // Create a footer to contain card footer
+  const bookCardFooter = document.createElement("footer");
+  bookCardFooter.classList.add("card-footer", "text-right");
+
+  // Create heading to contain book title
+  const bookTitleHeading = document.createElement("h2");
+  bookTitleHeading.classList.add("book-title", "card-title", "h6");
+  bookTitleHeading.innerText = book.title;
+
+  // Create paragraph to contain book author
+  const bookAuthorParagraph = document.createElement("p");
+  bookAuthorParagraph.classList.add(
+    "book-author",
+    "card-subtitle",
+    "text-muted",
+    "small"
+  );
+  bookAuthorParagraph.innerText = reverseName(book.author) + " ";
 
   // Create img to contain book cover
   const bookCoverImg = document.createElement("img");
-  bookCoverImg.classList.add("book-cover");
+  bookCoverImg.classList.add("book-cover", "card-img-top", "img-fluid");
   bookCoverImg.src = book.img;
 
   // Create paragraph to contain status
-  const readStatusParagraph = document.createElement("p");
-  readStatusParagraph.classList.add("status");
-  readStatusParagraph.innerText = "Status: Still need to read...";
+  const readStatusSpan = document.createElement("span");
+  readStatusSpan.classList.add(
+    "status",
+    "badge-pill",
+    "badge-secondary",
+    "small"
+  );
+  readStatusSpan.innerText = "To read";
 
   // Change status paragraph if read
   if (book.alreadyRead) {
-    readStatusParagraph.classList.add("already-read");
-    readStatusParagraph.innerText = "Status: Already read";
+    readStatusSpan.classList.replace("badge-secondary", "badge-success");
+    readStatusSpan.innerText = "Read";
   }
 
   // Compose elements
-  bookTitleParagraph.appendChild(bookAuthorSpan);
-  bookListItem.appendChild(bookTitleParagraph);
+  bookCardSection.appendChild(bookTitleHeading);
+  bookCardSection.appendChild(bookAuthorParagraph);
+  bookCardFooter.appendChild(readStatusSpan);
   bookListItem.appendChild(bookCoverImg);
-  bookListItem.appendChild(readStatusParagraph);
+  bookListItem.appendChild(bookCardSection);
+  bookListItem.appendChild(bookCardFooter);
   bookList.appendChild(bookListItem);
 });
