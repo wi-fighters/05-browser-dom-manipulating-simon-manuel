@@ -2,7 +2,6 @@
 Create a personalized book website! Instead of adding all of the details of books in HTML, add data on the page from the array below using JavaScript.
 
 **Instructions**:
-* Change the text of the h1 to uppercase and center it on the page.
 * Iterate through the array of books and display the title and author on the page.
 * Add an image to each book that links to a URL of the book cover.
 * Add bootstrap classes to the elements where necessary in order to style the page - see images for styling reference. 
