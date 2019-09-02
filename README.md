@@ -1,31 +1,17 @@
 # The Book List
 Create a personalized book website! Instead of adding all of the details of books in HTML, add data on the page from the array below using JavaScript.
 
-```javascript
-    const books = [
-      {
-        title: 'The Design of EveryDay Things',
-        author: 'Don Norman',
-        alreadyRead: false
-      }, {
-        title: 'The Most Human Human',
-        author: 'Brian Christian',
-        alreadyRead: true
-      }
-    ];
-```
 **Instructions**:
 * Change the text of the h1 to uppercase and center it on the page.
-* Iterate through the array of books. For each book, create a p element with the book title and author and append it to the page.
-* Use a ul, `unordered-list`, and li to display the books. Again, add li elements using JavaScript.
-* Add an img to each book that links to a URL of the book cover.
-* Change the height and width of the images on the page to appear the same size. Add a border around the images.
-* Change the style of the book depending on whether it has been read or not.
-* Change the order of the author's name so that **last name appears first**. 
-* Sort the books on the page depending on alphabetical order of the author's last name.
-* Make the page responsive using JavaScript.
+* Iterate through the array of books and display the title and author on the page.
+* Add an image to each book that links to a URL of the book cover.
+* Add bootstrap classes to the elements where necessary in order to style the page - see images for styling reference. 
+* Change the badge of the book depending on whether it has been read. Change the status paragraph to "Read".  
+* Change the order of the author's name on the page. The last name should appear first e.g. "Smith John". 
+* The books should appear in alphabetical order of the authors' last names on the page.
 
 **Notes**: 
-* Add additional styling to the page.
 * Deadline: 2hrs.
+* Work on the `index.html` and `index.js` files provided in this repository.
+* Add bootstrap styling where necessary. See the reference images for result. 
 
