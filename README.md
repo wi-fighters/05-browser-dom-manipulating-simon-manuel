@@ -6,7 +6,7 @@ Create a personalized book website! Instead of adding all of the details of book
 * Add an image to each book that links to a URL of the book cover.
 * Add bootstrap classes to the elements where necessary in order to style the page - see images for styling reference. 
 * Change the badge of the book depending on whether it has been read. Change the status paragraph to "Read".  
-* Change the order of the author's name on the page. The last name should appear first e.g. "Smith John". 
+* Change the order of the author's name on the page. The last name should appear first e.g. "Smith, John". 
 * The books should appear in alphabetical order of the authors' last names on the page.
 
 **Notes**: 
