@@ -1,16 +1,17 @@
 # The Book List
-Create a personalized book website! Instead of adding all of the details of books in HTML, add data on the page from the array below using JavaScript.
+Create a personalized book website! Instead of adding all of the details of books in HTML, add data on the page from the `books` array in `index.js` using JavaScript.
 
-**Instructions**:
-* Iterate through the array of books and display the title and author on the page.
-* Add an image to each book that links to a URL of the book cover.
-* Add bootstrap classes to the elements where necessary in order to style the page - see images for styling reference. 
-* Change the badge of the book depending on whether it has been read. Change the status paragraph to "Read".  
-* Change the order of the author's name on the page. The last name should appear first e.g. "Smith, John". 
-* The books should appear in alphabetical order of the authors' last names on the page.
+## Book Details
+Display the book details on the page, such as author's name, book title and reading status. The book cover should appear above the book details and the image should link to the URL of the book cover. 
+
+## Status
+The styling of reading status should be updated depending on whether the book has been read - the bootstrap badge style should change as well as the text, which should appear as "Read". 
+
+## Order
+The authors' last names should appear first e.g. "Smith, John". Furthermore, the books should be displayed on the page in alphabetical order according to the authors' last names.
 
 **Notes**: 
 * Deadline: 2hrs.
-* Work on the `index.html` and `index.js` files provided in this repository.
+* Work with the `index.html` and `index.js` files provided in this repository.
 * Add bootstrap styling where necessary. See the reference images for result. 
 
