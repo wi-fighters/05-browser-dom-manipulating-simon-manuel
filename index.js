@@ -31,21 +31,28 @@
 
   books.forEach(
     el => {
-      console.log(el);
+      const li = document.createElement("li");
+      const ul = document.querySelector(".book-list")
+
+      const createCard = (() => {
+        ul.appendChild(li);
+      })();
+
+      /**
+        *  -> create li
+        *      -> append img
+        *      -> crate h2
+        *      -> append title to h2
+        *      -> create div .author
+        *      -> append Author[1], Author[0]
+        *      -> create div .status
+        *      -> append alreadyRead
+       */
 
     }
   )
   /**
-   * traverse through array
-   *  -> forEach
-   *      -> create li
-   *      -> append img
-   *      -> crate h2
-   *      -> append title to h2
-   *      -> create div .author
-   *      -> append Author[1], Author[0]
-   *      -> create div .status
-   *      -> append alreadyRead
+   *      
    *  li
    *      append img
    *    h2
