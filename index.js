@@ -48,22 +48,25 @@
 
       const li = document.createElement("li");
       const a = document.createElement("a");
+      a.setAttribute("href", `${book.img}`)
+      a.appendChild(img);
+
       const img = document.createElement("img");
+      img.setAttribute("src", `${book.img}`)
+
       const hTwo = document.createElement("h2");
+      hTwo.prepend(document.createTextNode(`${book.title}`));
+
       const divOne = document.createElement("div");
+      divOne.prepend(document.createTextNode(`${authorName[1]}, ${authorName[0]}`));
+
       const divTwo = document.createElement("div");
       const authorName = book.author.split(" ");
 
       ul.appendChild(li);
-      li.appendChild(a);
-      a.setAttribute("href", `${book.img}`)
-      a.appendChild(img);
-      img.setAttribute("src", `${book.img}`)
-      li.appendChild(hTwo);
-      hTwo.prepend(document.createTextNode(`${book.title}`));
-      li.appendChild(divOne);
-      divOne.prepend(document.createTextNode(`${authorName[1]}, ${authorName[0]}`));
-      li.appendChild(divTwo);
+      li.append(a, hTwo, divOne, divTwo);
+
+
 
       if (book.alreadyRead) {
         divTwo.prepend("Read");
