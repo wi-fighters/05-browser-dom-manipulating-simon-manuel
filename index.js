@@ -41,18 +41,26 @@
       const hTwo = document.createElement("h2");
       const divOne = document.createElement("div");
       const divTwo = document.createElement("div");
+      const authorName = books[i].author.split(" ");
 
       ul.appendChild(li);
       li.appendChild(a);
       a.setAttribute("href", `${books[i].img}`)
       a.appendChild(img);
-      // src link
+      img.setAttribute("src", `${books[i].img}`)
       li.appendChild(hTwo);
-      // insert dext
+      hTwo.prepend(document.createTextNode(`${books[i].title}`));
       li.appendChild(divOne);
-      // give id
-      //insert text, sort names
+      divOne.prepend(document.createTextNode(`${authorName[1]}, ${authorName[0]}`));
       li.appendChild(divTwo);
+
+      if (books[i].alreadyRead) {
+        divTwo.prepend("Read");
+      } else {
+        divTwo.prepend("To read");
+      }
+
+
       // give id 
       // show status
       i++
