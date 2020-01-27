@@ -43,10 +43,17 @@
       // console.log(book);
       ul.appendChild(li);
       li.appendChild(a);
+      // url link
       a.appendChild(img);
+      // src link
       li.appendChild(hTwo);
+      // insert dext
       li.appendChild(divOne);
+      // give id
+      //insert text, sort names
       li.appendChild(divTwo);
+      // give id 
+      // show status
 
 
     })
