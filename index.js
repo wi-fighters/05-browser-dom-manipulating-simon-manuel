@@ -30,34 +30,31 @@
   ];
 
   const ul = document.querySelector(".book-list");
-  const li = document.createElement("li");
-  const a = document.createElement("a");
-
   books.forEach(
 
     book => {
       const li = document.createElement("li");
+      const a = document.createElement("a");
+      const img = document.createElement("img");
+      const hTwo = document.createElement("h2");
+      const divOne = document.createElement("div");
+      const divTwo = document.createElement("div")
 
       // console.log(book);
       ul.appendChild(li);
+      li.appendChild(a);
+      a.appendChild(img);
+      li.appendChild(hTwo);
+      li.appendChild(divOne);
+      li.appendChild(divTwo);
 
 
-      // TODO: maybe figure out why this was weird
-      // const createdLi = [...document.querySelectorAll("ul li")];
-      // console.log(createdLi);
-      // console.log(createdLi[0]);
-      // createdLi.appendChild(a);
     })
   ////Li nodelist
 
 
 })();
 /**
-  *  -> create li
-  *      -> create a
-  *      -> append a to li
-  *      -> append img
-  *      -> crate h2
   *      -> append title to h2
   *      -> create div .author
   *      -> append Author[1], Author[0]
