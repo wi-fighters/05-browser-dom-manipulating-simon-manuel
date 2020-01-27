@@ -56,10 +56,10 @@
       img.setAttribute("src", `${book.img}`)
 
       const hTwo = document.createElement("h2");
-      hTwo.prepend(document.createTextNode(`${book.title}`));
+      hTwo.append(document.createTextNode(`${book.title}`));
 
       const divOne = document.createElement("div");
-      divOne.prepend(document.createTextNode(`${authorName[1]}, ${authorName[0]}`));
+      divOne.append(document.createTextNode(`${authorName[1]}, ${authorName[0]}`));
 
       const divTwo = document.createElement("div");
 
