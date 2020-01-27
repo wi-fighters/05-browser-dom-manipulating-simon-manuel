@@ -45,11 +45,12 @@
   sortedBooks.forEach(
 
     book => {
+      const authorName = book.author.split(" ");
 
       const li = document.createElement("li");
+
       const a = document.createElement("a");
       a.setAttribute("href", `${book.img}`)
-      a.appendChild(img);
 
       const img = document.createElement("img");
       img.setAttribute("src", `${book.img}`)
@@ -61,11 +62,10 @@
       divOne.prepend(document.createTextNode(`${authorName[1]}, ${authorName[0]}`));
 
       const divTwo = document.createElement("div");
-      const authorName = book.author.split(" ");
 
       ul.appendChild(li);
       li.append(a, hTwo, divOne, divTwo);
-
+      a.appendChild(img);
 
 
       if (book.alreadyRead) {
