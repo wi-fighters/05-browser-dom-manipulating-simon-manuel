@@ -29,6 +29,12 @@
     }
   ];
 
+  books.forEach(
+    el => {
+      console.log(el);
+
+    }
+  )
   /**
    * traverse through array
    *  -> forEach
@@ -56,7 +62,7 @@
    * 
    */
 
-  console.log(books[0].title);
+  // console.log(books[0].title);
 
 
 })();
