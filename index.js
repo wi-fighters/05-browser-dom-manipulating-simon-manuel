@@ -1,4 +1,5 @@
 (() => {
+  let i = 0;
   const books = [
     {
       title: "The Design of EveryDay Things",
@@ -28,10 +29,17 @@
       img: "https://eloquentjavascript.net/img/cover.jpg"
     }
   ];
-  let i = 0;
+
+  const sortedBooks = books.sort((a, b) => {
+    const authorA = a.author.split(" ")[1].charAt(0);
+    const authorB = b.author.split(" ")[1].charAt(0);
+    if (authorA < authorB) { return -1 }
+    if (authorA > authorB) { return 1 }
+  });
+
 
   const ul = document.querySelector(".book-list");
-  books.forEach(
+  sortedBooks.forEach(
 
     book => {
 
@@ -59,40 +67,10 @@
       } else {
         divTwo.prepend("To read");
       }
-
-
-      // give id 
-      // show status
       i++
 
     })
-  ////Li nodelist
+
 
 
 })();
-/**
-  *      -> append title to h2
-  *      -> create div .author
-  *      -> append Author[1], Author[0]
-  *      -> create div .status
-  *      -> append alreadyRead
- */
-/**
- *
- *  li
- *      append img
- *    h2
- *        append title
- *    /h2
- *    div
- *        append author
- *        --- Family name, First name
- *    /div
- *    div
- *        append alreadyRead
- *    /div
- *  /li
- *
- */
-
-  // console.log(books[0].title);
