@@ -1,5 +1,4 @@
 (() => {
-  let i = 0;
   const books = [
     {
       title: "The Design of EveryDay Things",
@@ -29,12 +28,16 @@
       img: "https://eloquentjavascript.net/img/cover.jpg"
     }
   ];
-
+  // sort the array regarding the first letter of the last names of the authors
   const sortedBooks = books.sort((a, b) => {
     const authorA = a.author.split(" ")[1].charAt(0);
     const authorB = b.author.split(" ")[1].charAt(0);
-    if (authorA < authorB) { return -1 }
-    if (authorA > authorB) { return 1 }
+    if (authorA < authorB) {
+      return -1
+    }
+    if (authorA > authorB) {
+      return 1
+    }
   });
 
 
@@ -49,28 +52,23 @@
       const hTwo = document.createElement("h2");
       const divOne = document.createElement("div");
       const divTwo = document.createElement("div");
-      const authorName = books[i].author.split(" ");
+      const authorName = book.author.split(" ");
 
       ul.appendChild(li);
       li.appendChild(a);
-      a.setAttribute("href", `${books[i].img}`)
+      a.setAttribute("href", `${book.img}`)
       a.appendChild(img);
-      img.setAttribute("src", `${books[i].img}`)
+      img.setAttribute("src", `${book.img}`)
       li.appendChild(hTwo);
-      hTwo.prepend(document.createTextNode(`${books[i].title}`));
+      hTwo.prepend(document.createTextNode(`${book.title}`));
       li.appendChild(divOne);
       divOne.prepend(document.createTextNode(`${authorName[1]}, ${authorName[0]}`));
       li.appendChild(divTwo);
 
-      if (books[i].alreadyRead) {
+      if (book.alreadyRead) {
         divTwo.prepend("Read");
       } else {
         divTwo.prepend("To read");
       }
-      i++
-
-    })
-
-
-
+    });
 })();
