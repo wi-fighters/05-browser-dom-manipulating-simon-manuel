@@ -29,47 +29,57 @@
     }
   ];
 
+  const ul = document.querySelector(".book-list");
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+
   books.forEach(
-    el => {
+
+    book => {
       const li = document.createElement("li");
-      const ul = document.querySelector(".book-list")
 
-      const createCard = (() => {
-        ul.appendChild(li);
-      })();
+      // console.log(book);
+      ul.appendChild(li);
 
-      /**
-        *  -> create li
-        *      -> append img
-        *      -> crate h2
-        *      -> append title to h2
-        *      -> create div .author
-        *      -> append Author[1], Author[0]
-        *      -> create div .status
-        *      -> append alreadyRead
-       */
 
-    }
-  )
-  /**
-   *      
-   *  li
-   *      append img
-   *    h2
-   *        append title
-   *    /h2
-   *    div
-   *        append author
-   *        --- Family name, First name
-   *    /div
-   *    div
-   *        append alreadyRead
-   *    /div
-   *  /li
-   * 
-   */
-
-  // console.log(books[0].title);
+      // TODO: maybe figure out why this was weird
+      // const createdLi = [...document.querySelectorAll("ul li")];
+      // console.log(createdLi);
+      // console.log(createdLi[0]);
+      // createdLi.appendChild(a);
+    })
+  ////Li nodelist
 
 
 })();
+/**
+  *  -> create li
+  *      -> create a
+  *      -> append a to li
+  *      -> append img
+  *      -> crate h2
+  *      -> append title to h2
+  *      -> create div .author
+  *      -> append Author[1], Author[0]
+  *      -> create div .status
+  *      -> append alreadyRead
+ */
+/**
+ *
+ *  li
+ *      append img
+ *    h2
+ *        append title
+ *    /h2
+ *    div
+ *        append author
+ *        --- Family name, First name
+ *    /div
+ *    div
+ *        append alreadyRead
+ *    /div
+ *  /li
+ *
+ */
+
+  // console.log(books[0].title);
