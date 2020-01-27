@@ -28,22 +28,23 @@
       img: "https://eloquentjavascript.net/img/cover.jpg"
     }
   ];
+  let i = 0;
 
   const ul = document.querySelector(".book-list");
   books.forEach(
 
     book => {
+
       const li = document.createElement("li");
       const a = document.createElement("a");
       const img = document.createElement("img");
       const hTwo = document.createElement("h2");
       const divOne = document.createElement("div");
-      const divTwo = document.createElement("div")
+      const divTwo = document.createElement("div");
 
-      // console.log(book);
       ul.appendChild(li);
       li.appendChild(a);
-      // url link
+      a.setAttribute("href", `${books[i].img}`)
       a.appendChild(img);
       // src link
       li.appendChild(hTwo);
@@ -54,7 +55,7 @@
       li.appendChild(divTwo);
       // give id 
       // show status
-
+      i++
 
     })
   ////Li nodelist
